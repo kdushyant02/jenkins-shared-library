@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(String buildResult,string SLACK_CHANNEL) {
+def call(String buildResult,String SLACK_CHANNEL) {
   if ( buildResult == "SUCCESS" ) {
     slackSend color: "good", channel: "${params.SLACK_CHANNEL}", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful - ${env.BUILD_URL}"
   }
