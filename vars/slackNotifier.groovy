@@ -10,9 +10,6 @@ def call(String buildResult, String SLACK_CHANNEL) {
   else if( buildResult == "FAILURE" ) { 
     slackSend (color: "danger", channel: "${params.SLACK_CHANNEL}", message: "*FAILED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}. \n More info at: ${env.BUILD_URL}")
   }
-  else if( buildResult == "ABORTED" ) { 
-    slackSend (color: "warning", channel: "${params.SLACK_CHANNEL}", message: "*ABORTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}. \n More info at: ${env.BUILD_URL}")
-  }
   else if( buildResult == "UNSTABLE" ) { 
     slackSend (color: "warning", channel: "${params.SLACK_CHANNEL}", message: "*UNSTABLE:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}. \n More info at: ${env.BUILD_URL}")
   }
